@@ -1,12 +1,10 @@
 # pages/urls.py
 
-from django.contrib import admin
 from django.urls import path
-from pages.views import login_view, logout_view, main_view
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login/', login_view, name='login'),
-    path('logout/', logout_view, name='logout'),
-    path('', main_view, name='main'),  # Main landing page
+    path('', views.login_view, name='login'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('download/<int:file_id>/', views.download_file, name='download_file'),
 ]

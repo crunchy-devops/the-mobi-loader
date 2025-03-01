@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -123,10 +123,15 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+# Media files settings
+MEDIA_URL = '/mnt_share/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mnt_share')
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'  # URL to redirect for login
 LOGIN_REDIRECT_URL = '/'  # URL to redirect after successful login
 LOGOUT_REDIRECT_URL = '/login/'  # URL to redirect after logout
 
 # Optional: Set session expiration time (in seconds)
-SESSION_COOKIE_AGE = 1209600  # 2 weeks, adjust as needed
+SESSION_COOKIE_AGE = 3600  # 1 hour , adjust as needed
