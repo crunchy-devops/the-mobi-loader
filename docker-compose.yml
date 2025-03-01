@@ -1,9 +1,15 @@
+volumes:
+  data:
+
+
 services:
   web:
     hostname: web
     container_name: web
     build: .
+    restart: always
     ports:
-      - "5000:8000"
+      - "80:8000"
     volumes:
+      - data:/mnt_share/data
       - .:/code

@@ -125,7 +125,7 @@ STATIC_URL = 'static/'
 
 # Media files settings
 MEDIA_URL = '/mnt_share/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mnt_share')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/mnt_share')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
